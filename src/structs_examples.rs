@@ -48,6 +48,8 @@ pub(crate) fn entry_point() {
 
     println!("Can rectangle1: {:#?}, hold rectangle2: {:#?}, decision: {}", rectangle,
              rectangle2, rectangle.can_hold(&rectangle2));
+
+    println!("Create square: {:#?}", Rectangle::square(20));
 }
 
 struct Color(u32, u32, bool);
@@ -66,6 +68,13 @@ impl Rectangle {
     }
     fn can_hold(&self, other: &Rectangle ) -> bool{
         self.width>=other.width && self.height>=other.height
+    }
+    ///Associated functions commonly used as constructors
+    fn square(size: u32) -> Rectangle{
+        Rectangle {
+            width: size,
+            height: size
+        }
     }
 }
 /// Override Rectangle implementation any time with newer impl, it works as overloaded implementation
