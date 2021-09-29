@@ -1,10 +1,11 @@
 
 // Test
+#![allow(dead_code)]
 pub(crate) mod human {
     pub(crate) mod anshul {
         pub(crate) fn name() {
             println!("My name is {}", "anshul");
-            println!("I have a animal friend name: {}", super::super::animal::lion::name())
+            println!("I have a animal friend name: {}", super::super::animal::lion::name());
         }
         //Either you need all struct fields to be public or need impl method
         // which fill hidden fileds and return unfinished object where public
@@ -34,3 +35,6 @@ pub mod animal{
     //     breed: String
     // }
 }
+
+
+

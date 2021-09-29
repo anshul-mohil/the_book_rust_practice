@@ -1,5 +1,5 @@
-use crate::packages_modules_crate::{ human as h};
-use crate::packages_modules_crate:: human ::{self};
+// use crate::packages_modules_crate::{ human as h};
+// use crate::packages_modules_crate:: human ::{self};
 mod data_type_and_functions;
 mod control_flow ;
 mod slice;
@@ -21,7 +21,14 @@ fn main() {
     //Absolute path
     // crate::enum_examples::entry_point();
     // crate::human::anshul::name();
-    h::anshul::name();
-    human::anshul::name();
+    // h::anshul::name();
+    // human::anshul::name();
+    vector_impl::vector_examples::entry_point();
 }
+
+
+
+
+
+
 
