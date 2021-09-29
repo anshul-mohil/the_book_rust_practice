@@ -28,10 +28,18 @@ pub mod vector_examples{
 
         println!("{:#?}", new_map);
     }
+    // #[warn(unused)]
     fn ownership_with_hashmap(){
-        let mut a = String::from("My color");
+        //commented 3 lines and replaced with below 2 lines
+        //to avoid seeing warnings but for example understanding
+        //consider commented code.
+        // let mut a = String::from("My color");
+        // let b = String::from("Always Blue");
+        // a = String::from("My Car");
+
+        let a = String::from("My color");
         let b = String::from("Always Blue");
-        a = String::from("My Car");
+
         let mut map = HashMap::new();
         map.insert(&a,10);
         map.insert(&b,20);

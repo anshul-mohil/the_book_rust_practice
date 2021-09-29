@@ -11,5 +11,7 @@ executable
 cargo check 
 #to release code
 cargo build --release
+#with backtrace enabled.
+RUST_BACKTRACE=1 cargo run
 ```
 Running cargo build for the first time also causes Cargo to create a new file at the top level: Cargo.lock
