@@ -13,5 +13,9 @@ cargo check
 cargo build --release
 #with backtrace enabled.
 RUST_BACKTRACE=1 cargo run
+#to understand a specific cause of an error
+rustc --explain E0308
+#To increase verbosity of logs to see in more detail what has been failed.
+cargo run --verbose
 ```
 Running cargo build for the first time also causes Cargo to create a new file at the top level: Cargo.lock

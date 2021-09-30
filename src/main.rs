@@ -24,7 +24,7 @@ fn main() {
     // crate::human::anshul::name();
     // h::anshul::name();
     // human::anshul::name();
-    vector_impl::vector_examples::entry_point();
+    // vector_impl::vector_examples::entry_point();
     panic_or_not_to_panic::entry_point();
 }
 
