@@ -113,3 +113,14 @@ fn loop_with_for_range(){
         println!("Printing elements in reverse {}",num)
     }
 }
+fn for_loop_to_evaluate_largest(list: &[i32]) -> i32 {
+    let mut largest = list[0];
+
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}

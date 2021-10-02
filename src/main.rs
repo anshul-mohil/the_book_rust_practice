@@ -8,6 +8,7 @@ mod enum_examples;
 mod packages_modules_crate;
 mod vector_impl;
 mod panic_or_not_to_panic;
+mod lifetime_examples;
 
 // use std::io;
 // use std::collections::HashMap;
@@ -25,7 +26,8 @@ fn main() {
     // h::anshul::name();
     // human::anshul::name();
     // vector_impl::vector_examples::entry_point();
-    panic_or_not_to_panic::entry_point();
+    // panic_or_not_to_panic::entry_point();
+    lifetime_examples::entry_point();
 }
 
 
