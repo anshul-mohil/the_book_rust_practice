@@ -15,7 +15,6 @@ pub(crate) fn entry_point() {
     tuple_examples();
     // panic_example();
     array_example();
-    func_with_parameters(10);
     let value = expression_example(2, false);
     println!("returned value {}",value);
     let plus_one_val = plus_one(value);
@@ -68,9 +67,8 @@ fn array_example() {
     println!("{}",b[0]);
     println!("{}",c[0]);
 }
-fn func_with_parameters(x: i32){
-    println!("X value is: {}", x)
-}
+
+
 // You access tuple with 3 different ways:
 // 1. use dot operator "." with index to access value in tuple
 // 2 use variable name to access value inside tuple

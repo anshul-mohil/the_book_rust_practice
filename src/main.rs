@@ -9,12 +9,14 @@ mod packages_modules_crate;
 mod vector_impl;
 mod panic_or_not_to_panic;
 mod lifetime_examples;
+mod functions;
 
 // use std::io;
 // use std::collections::HashMap;
 // use std::collections::*;
 fn main() {
-    data_type_and_functions::entry_point();
+    // data_type_and_functions::entry_point();
+    functions::entry_point();
     // control_flow::entry_point();
     // slice::entry_point();
     // structs_examples::entry_point();
