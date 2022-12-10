@@ -1,7 +1,4 @@
-#compile with rustc
-compile file: rustc <filename>.rs
-run: .<filename>
-### compile/build/run with cargo
+
 `````shell
 # to create new project
 $ cargo new <project_name>
@@ -24,3 +21,15 @@ $ rustc --explain E0308
 $ cargo run --verbose
 `````
 Running cargo build for the first time also causes Cargo to create a new file at the top level: Cargo.lock
+#####
+
+[//]: # (<p>)
+
+[//]: # (compile with rustc)
+
+[//]: # (compile file: rustc <filename>.r)
+
+[//]: # (run: .<filename>)
+
+[//]: # (compile/build/run with cargo)
+

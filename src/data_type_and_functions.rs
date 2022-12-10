@@ -1,11 +1,17 @@
 // use std::io;
 #![allow(dead_code)]
+// - [x] Complete task
+// - [ ] Incomplete task When you’re compiling in debug mode, Rust includes checks for integer overflow that cause your program to panic at runtime if this behavior occurs.
+// Rust does not include checks for integer overflow that cause panics. Instead, if overflow occurs, Rust performs two’s complement wrapping.
+// To modify auto wrapping behaviour read further configurations https://doc.rust-lang.org/book/ch03-02-data-types.html
 pub(crate) fn entry_point() {
     constant_variables_and_mutability();
-    integer_literals();
+    //  Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
+    integer_float_examples();
     math_operations();
     boolean_example();
     char_example();
+    // compound types
     tuple_examples();
     // panic_example();
     array_example();
@@ -15,7 +21,13 @@ pub(crate) fn entry_point() {
     let plus_one_val = plus_one(value);
     println!("{}",plus_one_val);
 }
-
+// Length	Signed	Unsigned
+// 8-bit	i8	    u8
+// 16-bit	i16	    u16
+// 32-bit	i32	    u32
+// 64-bit	i64	    u64
+// 128-bit	i128    u128
+// arch	    isize	usize
 fn expression_example(x: i32, y: bool) -> i32{
     if y {
         return x;
@@ -26,7 +38,7 @@ fn expression_example(x: i32, y: bool) -> i32{
             // Expressions do not include ending semicolons
             x + 1
         };
-        println!("value of Y retruned by expression: {}", cal);
+        println!("value of Y returned by expression: {}", cal);
         return cal;
     }
     //last value as return value if without semicolon
@@ -37,34 +49,60 @@ fn plus_one(x: i32)->i32{
 //     OR
     x+1
 }
-
+// Arrays are useful when you want your data allocated on the stack rather than the heap
+// or when you want to ensure you always have a fixed number of elements.
+// An array isn’t as flexible as the vector type, though. A vector is a similar collection
+// type provided by the standard library that is allowed to grow or shrink in size.
+// If you’re unsure whether to use an array or a vector, chances are you should use a vector.
+// https://doc.rust-lang.org/book/ch03-02-data-types.html#the-array-type
 fn array_example() {
+    //Array definition syntax:
+    // type of each element, a semicolon, and then the number of elements in the array
     //explicit type declaration
     let a: [u32; 5] = [1, 2, 3, 4, 5];
+    println!("{}",a[2]);
+    // implicit type identification by rust compiler
+    //create array with same value 5 times
     let b=["anshul";5];
     let c = [-10,-20];
     println!("{}",b[0]);
-    println!("{}",a[2]);
     println!("{}",c[0]);
 }
 fn func_with_parameters(x: i32){
     println!("X value is: {}", x)
 }
+// You access tuple with 3 different ways:
+// 1. use dot operator "." with index to access value in tuple
+// 2 use variable name to access value inside tuple
+// It seems tuples are to group variable, sort of non-growable variable list
+// https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
 fn tuple_examples() {
-    //tuple with common values
+    //tuple declaration with common values
     let tup_common = (1, 2, 3, 4, 5);
     println!("{}", tup_common.0);
-    //tuple with misc values
+
+    //tuple declaration with misc values
     let tup_misc: (i32, f32, char, bool) = (100, 100.333, 'A', true);
-    //tuple value accessing
+    //accessing tuple as DS
     println!("{}", tup_misc.0);
     println!("{}", tup_misc.3);
-    //tuple deconstruction
-    let (x, y, z, l) = tup_misc;
-    println!("This should be same as above {}", x);
-    println!("This should be same as above  {}", l);
-    println!("{}", y);
-    println!("{}", z);
+
+    //tuple is single entity, you can deconstruct tuple to extract each value and
+    // map with variables
+    //this is called tuple deconstruction
+    let (x0,x1, x2,x3) = tup_misc;
+
+    //accessing tuple internal var
+    println!("Tuple as variable x0={}, tuple with position access tup_misc.0= {}", x0,tup_misc.0);
+    println!("Tuple as variable x1={}, tuple with position access tup_misc.0= {}", x1,tup_misc.1);
+    println!("Tuple as variable x2={}, tuple with position access tup_misc.0= {}", x2,tup_misc.2);
+    println!("Tuple as variable x3={}, tuple with position access tup_misc.0= {}", x3,tup_misc.3);
+
+
+    //Further study: Unit
+    //The tuple without any values has a special name, unit. This value and its corresponding type
+    // are both written () and represent an empty value or an empty return type.
+    // Expressions implicitly return the unit value if they don’t return any other value.
 }
 
 fn constant_variables_and_mutability() {
@@ -80,7 +118,8 @@ fn constant_variables_and_mutability() {
     let y = y * 2;
     println!("The value of shadow x: {}", y);
 
-    //Note: you cannot shadow variable with constant
+    /// can't shadow variable with constant
+    /// must define datatype
     const Z: i32 = 12;
     println!("Z const value: {}", Z);
 }
@@ -90,6 +129,8 @@ fn boolean_example() {
     println!("{}", t);
     let f: bool = false; // with explicit type annotation
     println!("{}", f);
+    let heart_eyed_cat = '😻';
+    println!("{}",heart_eyed_cat)
 }
 
 fn math_operations() {
@@ -110,7 +151,7 @@ fn math_operations() {
     println!("{}", remainder);
 }
 
-fn integer_literals() {
+fn integer_float_examples() {
     let guess: u32 = "10".parse().expect("not a number!");
     println!("Value of guess: {}", guess);
     let guess: u32 = "42".parse().expect("Not a number!");
